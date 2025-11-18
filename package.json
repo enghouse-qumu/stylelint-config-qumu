@@ -29,12 +29,12 @@
   },
   "devDependencies": {
     "@qumu/eslint-config": "1.0.6",
-    "@vitest/coverage-v8": "^3.2.4",
-    "vitest": "^3.2.4"
+    "@vitest/coverage-v8": "4.1.0",
+    "vitest": "4.1.0"
   },
   "peerDependencies": {
     "@stylistic/stylelint-plugin": "4.0.0",
-    "postcss-scss": "^4.0.9",
+    "postcss-scss": "4.0.9",
     "stylelint": "16.24.0",
     "stylelint-config-standard": "39.0.0",
     "stylelint-order": "7.0.0",
