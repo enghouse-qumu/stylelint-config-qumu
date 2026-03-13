@@ -5,13 +5,13 @@
 To use our configuration, you first need to install the Enghouse Qumu rules.
 
 ```bash
-npm i -D @enghouse-qumu/stylelint-config-qumu
+npm i -D @qumu/stylelint-config-qumu
 ```
 
 Once installed, create a `stylelint.config.mjs` file and add the following code:
 
 ```javascript
-import config from '@enghouse-qumu/stylelint-config-qumu';
+import config from '@qumu/stylelint-config-qumu';
 
 export default {
   extends: [config],
@@ -33,7 +33,7 @@ Simply add a `"rules"` key to your config and add your overrides there.
 For example, to change the `indentation` to tabs and turn off the `number-leading-zero` rule:
 
 ```javascript
-import config from '@enghouse-qumu/stylelint-config-qumu';
+import config from '@qumu/stylelint-config-qumu';
 
 export default {
   extends: [config],
@@ -53,7 +53,7 @@ export default {
 ## Terminology
 
   <a name="terminology--rule-declaration"></a><a name="1.1"></a>
-  - [1.1](#terminology--rule-declaration) **Rule declatation**: A “rule declaration” is the name given to a selector (or a group of selectors) with an accompanying group of properties. Here's an example:
+  - [1.1](#terminology--rule-declaration) **Rule declaration**: A “rule declaration” is the name given to a selector (or a group of selectors) with an accompanying group of properties. Here's an example:
 
   ```css
   .listing {

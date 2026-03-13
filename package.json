@@ -1,5 +1,5 @@
 {
-  "name": "@enghouse-qumu/stylelint-config-qumu",
+  "name": "@qumu/stylelint-config-qumu",
   "version": "2.0.0",
   "description": "Stylelint configuration for Qumu",
   "main": "index.js",
@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://bitbucket.org/enghouseglobal/ip-qumu_stylelint-config-qumu"
+    "url": "git+https://github.com/enghouse-qumu/stylelint-config-qumu"
   },
   "bugs": {
-    "url": "https://bitbucket.org/enghouseglobal/ip-qumu_stylelint-config-qumu/issues"
+    "url": "https://github.com/enghouse-qumu/stylelint-config-qumu/issues"
   },
   "type": "module",
   "scripts": {
     "lint": "eslint",
-    "test": "vitest run --coverage",
+    "test": "vitest run",
     "test:watch": "vitest run --watch"
   },
   "dependencies": {
@@ -28,7 +28,7 @@
     "stylelint-scss": "6.12.1"
   },
   "devDependencies": {
-    "@enghouse-qumu/eslint-config": "1.0.2",
+    "@qumu/eslint-config": "1.0.6",
     "@vitest/coverage-v8": "^3.2.4",
     "vitest": "^3.2.4"
   },
