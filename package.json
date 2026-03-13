@@ -1,6 +1,6 @@
 {
   "name": "@qumu/stylelint-config-qumu",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Stylelint configuration for Qumu",
   "main": "index.js",
   "engines": {
