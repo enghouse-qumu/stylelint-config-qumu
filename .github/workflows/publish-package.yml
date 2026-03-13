@@ -1,0 +1,54 @@
+name: Publish Package
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  publish-package:
+    name: Release package to GitHub packages
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          ref: ${{ github.ref }}
+
+      - name: Use Node.js 24
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: 'npm'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@enghouse-qumu'
+
+      - name: Install dependencies
+        run: npm ci
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build package
+        run: npm run build
+
+      - name: Publish to GitHub Packages
+        run: |
+          VERSION_TAG="${GITHUB_REF#refs/tags/}"
+          
+          if [[ "$VERSION_TAG" == *"-alpha."* ]]; then
+            TAG="alpha"
+          elif [[ "$VERSION_TAG" == *"-beta."* ]]; then
+            TAG="beta"
+          elif [[ "$VERSION_TAG" == *"-rc."* ]]; then
+            TAG="next"
+          else
+            TAG="latest"
+          fi
+          
+          npm publish --tag $TAG
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

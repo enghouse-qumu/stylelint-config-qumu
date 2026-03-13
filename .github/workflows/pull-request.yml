@@ -1,37 +1,37 @@
-name: "Lint, test and scan"
+name: "Lint & test"
 
 permissions:
   contents: read
 
 on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
   pull_request:
-    types: [ opened, synchronize, reopened ]
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
 
 jobs:
   unit-test:
     name: Unit tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
-          ref: ${{ github.head_ref }}
 
-      - name: Use Node.js
+      - name: Use Node.js 24
         uses: actions/setup-node@v6
         with:
           node-version: 24
           cache: 'npm'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@enghouse-qumu'
 
       - name: Install dependencies
         run: npm ci
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Lint
         run: npm run lint
 
-      - name: Tests
-        run: npm test
+      - name: Test
+        run: npm run test -- --coverage
