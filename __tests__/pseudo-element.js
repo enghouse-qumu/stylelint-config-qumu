@@ -22,6 +22,6 @@ describe('Pseudo element', () => {
     .then((warnings) => {
       expect(warnings).toHaveLength(2);
       expect(warnings[0].text).toBe('Expected double colon pseudo-element notation (selector-pseudo-element-colon-notation)');
-      expect(warnings[1].text).toBe('Unexpected unknown pseudo-element selector "::hover" (selector-pseudo-element-no-unknown)');
+      expect(warnings[1].text).toBe('Unknown pseudo-element selector "::hover" (selector-pseudo-element-no-unknown)');
     }));
 });

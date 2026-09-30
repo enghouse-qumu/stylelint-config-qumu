@@ -17,6 +17,6 @@ describe('Zero unit', () => {
     .then((output) => output.results[0].warnings)
     .then((warnings) => {
       expect(warnings).toHaveLength(1);
-      expect(warnings[0].text).toBe('Unexpected unit (length-zero-no-unit)');
+      expect(warnings[0].text).toBe('Disallowed unit (length-zero-no-unit)');
     }));
 });

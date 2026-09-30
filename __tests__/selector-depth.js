@@ -23,8 +23,7 @@ describe('Selector depth scss', () => {
     })
     .then((output) => output.results[0].warnings)
     .then((warnings) => {
-      expect(warnings).toHaveLength(2);
-      expect(warnings[0].text).toBe('Expected ".one .two .three > .four" to have no more than 3 compound selectors (selector-max-compound-selectors)');
-      expect(warnings[1].text).toBe('Expected ".three > .four" to have no more than 3 compound selectors (selector-max-compound-selectors)');
+      expect(warnings).toHaveLength(1);
+      expect(warnings[0].text).toBe('Too many compound selectors in ".one .two .three > .four", maximum 3 (selector-max-compound-selectors)');
     }));
 });

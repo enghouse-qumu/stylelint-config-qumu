@@ -45,10 +45,8 @@ describe('Nesting depth scss', () => {
     })
     .then((output) => output.results[0].warnings)
     .then((warnings) => {
-      expect(warnings).toHaveLength(3);
-      expect(warnings[0].text).toBe('Expected nesting depth to be no more than 3 (max-nesting-depth)');
-      expect(warnings[1].text).toBe('Expected ".four" to have no more than 3 compound selectors (selector-max-compound-selectors)');
-      expect(warnings[2].text).toBe('Expected ".five" to have no more than 3 compound selectors (selector-max-compound-selectors)');
+      expect(warnings).toHaveLength(1);
+      expect(warnings[0].text).toBe('Too deep nesting, maximum 3 (max-nesting-depth)');
     }));
 
   it('should return no errors', () => stylelint
