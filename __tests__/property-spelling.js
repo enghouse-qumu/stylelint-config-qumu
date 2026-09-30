@@ -18,7 +18,7 @@ describe('Property spelling scss', () => {
     .then((output) => output.results[0].warnings)
     .then((warnings) => {
       expect(warnings).toHaveLength(2);
-      expect(warnings[0].text).toBe('Unexpected unknown property "diplay" (property-no-unknown)');
-      expect(warnings[1].text).toBe('Unexpected unknown property "heigth" (property-no-unknown)');
+      expect(warnings[0].text).toBe('Unknown property "diplay" (property-no-unknown)');
+      expect(warnings[1].text).toBe('Unknown property "heigth" (property-no-unknown)');
     }));
 });

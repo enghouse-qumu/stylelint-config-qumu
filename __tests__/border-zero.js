@@ -17,6 +17,6 @@ describe('Border zero', () => {
     .then((output) => output.results[0].warnings)
     .then((warnings) => {
       expect(warnings).toHaveLength(1);
-      expect(warnings[0].text).toBe('Unexpected value "none" for property "border" (declaration-property-value-disallowed-list)');
+      expect(warnings[0].text).toBe('Disallowed value "none" for property "border" (declaration-property-value-disallowed-list)');
     }));
 });

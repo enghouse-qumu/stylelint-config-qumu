@@ -24,6 +24,6 @@ describe('Single line per property', () => {
       expect(warnings[2].text).toBe('Unexpected whitespace before "{" of a single-line block (@stylistic/block-opening-brace-newline-before)');
       expect(warnings[3].text).toBe('Expected newline after ";" (@stylistic/declaration-block-semicolon-newline-after)');
       expect(warnings[4].text).toBe('Expected newline after ";" (@stylistic/declaration-block-semicolon-newline-after)');
-      expect(warnings[5].text).toBe('Expected no more than 1 declaration (declaration-block-single-line-max-declarations)');
+      expect(warnings[5].text).toBe('Too many declarations, maximum 1 (declaration-block-single-line-max-declarations)');
     }));
 });

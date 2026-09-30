@@ -17,6 +17,6 @@ describe('Color keyword', () => {
     .then((output) => output.results[0].warnings)
     .then((warnings) => {
       expect(warnings).toHaveLength(1);
-      expect(warnings[0].text).toBe('Unexpected named color "green" (color-named)');
+      expect(warnings[0].text).toBe('Disallowed named color "green" (color-named)');
     }));
 });

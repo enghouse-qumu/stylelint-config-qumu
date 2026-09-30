@@ -20,6 +20,6 @@ describe('Debug statement scss', () => {
     .then((output) => output.results[0].warnings)
     .then((warnings) => {
       expect(warnings).toHaveLength(1);
-      expect(warnings[0].text).toBe('Unexpected at-rule "@debug" (at-rule-disallowed-list)');
+      expect(warnings[0].text).toBe('Disallowed at-rule "@debug" (at-rule-disallowed-list)');
     }));
 });
